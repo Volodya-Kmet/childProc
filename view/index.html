@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="wrapper" style="display: flex">
+    <div style="border: 1px solid black; padding: 5px; width: 80vw">
+        <h2>run code
+            <button onclick="runCode()">run</button>
+        </h2>
+
+        <textarea rows="20" style="width: 60vw"></textarea>
+    </div>
+    <div style="border: 1px solid black; padding: 5px; width: 20vw">
+        <h2>npm i  <span style="padding: 5px"></span></h2>
+        <input type="text">
+        <button onclick="npmInstall()">Install</button>
+    </div>
+
+</div>
+<div style="border: 1px solid black; padding: 5px; display: flex; flex-direction: column">
+    <h2>result</h2>
+    <ul></ul>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

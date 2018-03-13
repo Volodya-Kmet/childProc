@@ -2,9 +2,11 @@ const config = require('./app/config'),
     express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    instalLib = require('./app/routes/instalLib'),
-    path = require('path');
+    path = require('path'),
+    cors = require('cors'),
+    runCode = require('./app/routes/runCode');
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -13,16 +15,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // REGISTER ROUTES
 // =======================================================
-app.use('/instalLib', instalLib);
-
-logger.info('===============Environment=================');
-logger.info(' current env : ' + env);
+app.use('/runCode', runCode);
 
 // START THE SERVER
 // =======================================================
 app.listen(config.server.port);
 
-logger.info('================Server=====================');
-logger.info(' host : ' + config.server.host);
-logger.info(' port : ' + config.server.port);
+console.log(`server run ${config.server.host}: ${config.server.port}`);
 
